@@ -29,6 +29,10 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginBottom: 5,
   },
+  place: {
+    fontSize: 18,
+    width: 30
+  }
 });
 
 export default styles;
