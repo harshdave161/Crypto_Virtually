@@ -21,7 +21,7 @@ const MarketCoins = [
         id: '3',
         name: 'Etherium',
         image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
-        netWorth: 99,
+        netWorth: 8499,
     },
 
 

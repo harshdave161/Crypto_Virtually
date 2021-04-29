@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
-import styles from './styles.js';
+import styles from './styles';
 
 export interface UserrankingItemProps {
     user: {
@@ -12,7 +12,7 @@ export interface UserrankingItemProps {
 }
 
 const UserRankingItem = (props : UserrankingItemProps) => {
-    const {user: {image,name,netWorth},place} = props;
+    const {user: {image,name,netWorth}, place} = props;
      return (
          <View style={styles.root}>
             <View style={styles.left}>
