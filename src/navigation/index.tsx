@@ -14,6 +14,7 @@ import { RootStackParamList } from '../../types';
 import BottomTabNavigator from './BottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import CoinExchangeScreen from '../screens/CoinExchangeScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -39,6 +40,13 @@ function RootNavigator() {
           headerShown: false
         }}
       />
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{
+            headerShown: false
+          }}
+        />
       <Stack.Screen
         name="CoinDetails"
         component={CoinDetailsScreen}

@@ -8,7 +8,7 @@ const CoinExchangeScreen = () => {
    const [coinAmount, setCoinAmount] = useState('')
    const [coinUSDValue, setCoinUSDValue] = useState('')
 
-   const maxUSD = 100000; 
+   const maxUsd = 100000; 
 
    const route = useRoute();
    // Main Logic
@@ -35,19 +35,21 @@ const CoinExchangeScreen = () => {
    const isBuy = route?.params?.isBuy;
    const coinData = route?.params?.coinData;
 
-   const onPlaceOrder = () =>{
-      if(isBuy && parseFloat(coinUSDValue) > maxUSD){
-         Alert.alert('Error', `Not Enough Mac USD Coins. Max: ${maxUSD}`);
+   const onPlaceOrder = () => {
+
+      if (isBuy && (parseFloat(coinUSDValue) > maxUsd)) {
+         console.log(`Not Enough Mac USD Coins. Max: ${maxUsd}`);
+         Alert.alert('Error', `Not Enough Mac USD Coins. Max: ${maxUsd}`);
          return;
       }
-      if(!isBuy && parseFloat(coinAmount) > coinData.amount){
+      if(!isBuy && (parseFloat(coinAmount) > coinData.amount)){
          Alert.alert('Error', `Not Enough ${coinData.symbol} Coins. Max: ${coinData.amount}`);
          return;
       }
    } 
 
      return (
-        <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === "ios" && "android" ? "padding" : "height"} >
+        <KeyboardAvoidingView style={styles.root} behavior={Platform.OS === "ios" ? "padding" : "height"} >
             <Text style={styles.title}>
                {isBuy ? 'Buy ' : 'Sell' } 
                {coinData.name}
@@ -69,7 +71,7 @@ const CoinExchangeScreen = () => {
                </View>
             </View>
             <Pressable style={styles.button} onPress={onPlaceOrder}>
-               <Text style={styles.buttonText}>Place Order</Text>
+            <Text style={styles.buttonText}>Place Order</Text>
             </Pressable>
         </KeyboardAvoidingView>   
      )
