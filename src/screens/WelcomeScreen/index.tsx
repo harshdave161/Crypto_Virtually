@@ -1,13 +1,55 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles';
+import { Auth, Hub } from 'aws-amplify';
+import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth/lib/types";
+import { useNavigation,  CommonActions } from '@react-navigation/core';
 const image = require('../../../assets/images/Saly-1.png');
 const googleButtonImage = require('../../../assets/images/googleButton.png');
 
 const WelcomeScreen = () => {
-    const signInGoogle = () => {
+    const navigation = useNavigation();
 
-    }
+    useEffect(() => {
+        const fetchUser = async () => {
+          const user = await Auth.currentAuthenticatedUser();
+          if (user) {
+            console.log('user data', user)
+            navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    { name: 'Root' },
+                  ],
+                })
+              );
+           
+          }
+        }
+    
+        fetchUser();
+      }, [])
+    
+
+      useEffect(() => {
+        Hub.listen("auth", ({ payload: { event, data } }) => {
+          if (event === "signIn") {
+            navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    { name: 'Root' },
+                  ],
+                })
+              );
+          }
+        });
+      }, [])
+    
+  const signInGoogle = async () => {
+    await Auth.federatedSignIn({ provider: CognitoHostedUIIdentityProvider.Google});
+  }
+
      return (
          <View style={styles.root}>
              <Image style={styles.image} source={image} />

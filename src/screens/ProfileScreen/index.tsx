@@ -1,3 +1,6 @@
+import { useNavigation } from '@react-navigation/core';
+import { CommonActions } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 import React, {useState} from 'react';
 import {View, Text, Image, Pressable} from 'react-native';
 import styles from './styles';
@@ -12,8 +15,18 @@ const ProfileScreen = () => {
         netWorth: 5145
         });
 
-        const signOut = ()=>{
-            alert('sign out');
+        const navigation = useNavigation();
+
+        const signOut = async ()=>{
+            await Auth.signOut();
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 0,
+                routes: [
+                  { name: 'Welcome' },
+                ],
+              })
+            );
         }
      return (
         <View style={styles.root}>

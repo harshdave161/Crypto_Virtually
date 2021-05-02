@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cryptovirtually-dev-212036-authRole",
+      "UnauthRoleArn": "arn:aws:iam::020985365200:role/amplify-cryptovirtually-dev-212036-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::020985365200:role/amplify-cryptovirtually-dev-212036-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-cryptovirtually-dev-212036-deployment",
+      "UnauthRoleName": "amplify-cryptovirtually-dev-212036-unauthRole",
+      "StackName": "amplify-cryptovirtually-dev-212036",
+      "StackId": "arn:aws:cloudformation:ap-south-1:020985365200:stack/amplify-cryptovirtually-dev-212036/fcca9a30-aa94-11eb-9a24-0af793dd161a",
+      "AmplifyAppId": "d31uv6j5pg24qj"
+    },
+    "categories": {
+      "function": {
+        "cryptovirtuallybd003413bd003413PostConfirmation": {
+          "deploymentBucketName": "amplify-cryptovirtually-dev-212036-deployment",
+          "s3Key": "amplify-builds/cryptovirtuallybd003413bd003413PostConfirmation-78557062577351327468-build.zip"
+        }
+      },
+      "auth": {
+        "cryptovirtuallybd003413bd003413": {}
+      }
+    }
+  }
+}

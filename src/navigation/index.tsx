@@ -33,13 +33,6 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Root"
-        component={BottomTabNavigator}
-        options={{
-          headerShown: false
-        }}
-      />
         <Stack.Screen
           name="Welcome"
           component={WelcomeScreen}
@@ -47,6 +40,13 @@ function RootNavigator() {
             headerShown: false
           }}
         />
+          <Stack.Screen
+            name="Root"
+            component={BottomTabNavigator}
+            options={{
+              headerShown: false
+            }}
+          />
       <Stack.Screen
         name="CoinDetails"
         component={CoinDetailsScreen}
