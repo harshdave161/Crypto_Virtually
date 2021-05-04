@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "cryptovirtually57d7c80257d7c802",
+  "functionName": "cryptovirtually57d7c80257d7c802PostConfirmation",
+  "resourceName": "cryptovirtually57d7c80257d7c802PostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "C:\\Users\\Digiplus It User-786\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "cryptovirtually57d7c80257d7c802PostConfirmation",
+  "skipEdit": true,
+  "enableCors": false
+}

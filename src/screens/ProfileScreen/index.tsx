@@ -19,14 +19,14 @@ const ProfileScreen = () => {
 
         const signOut = async ()=>{
             await Auth.signOut();
-            // navigation.dispatch(
-            //   CommonActions.reset({
-            //     index: 0,
-            //     routes: [
-            //       { name: 'Welcome' },
-            //     ],
-            //   })
-            // );
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 0,
+                routes: [
+                  { name: 'Welcome' },
+                ],
+              })
+            );
         }
      return (
         <View style={styles.root}>

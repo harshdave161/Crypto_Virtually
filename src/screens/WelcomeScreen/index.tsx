@@ -10,45 +10,45 @@ const googleButtonImage = require('../../../assets/images/googleButton.png');
 const WelcomeScreen = () => {
     const navigation = useNavigation();
 
-    // useEffect(() => {
-    //     const fetchUser = async () => {
-    //       const user = await Auth.currentAuthenticatedUser();
-    //       if (user) {
-    //         console.log('user data', user)
-    //         navigation.dispatch(
-    //             CommonActions.reset({
-    //               index: 0,
-    //               routes: [
-    //                 { name: 'Root' },
-    //               ],
-    //             })
-    //           );
+    useEffect(() => {
+        const fetchUser = async () => {
+          const user = await Auth.currentAuthenticatedUser();
+          if (user) {
+            console.log('user data', user)
+            navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    { name: 'Root' },
+                  ],
+                })
+              );
            
-    //       }
-    //     }
+          }
+        }
     
-    //     fetchUser();
-    //   }, [])
+        fetchUser();
+      }, [])
     
 
-      // useEffect(() => {
-      //   Hub.listen("auth", ({ payload: { event, data } }) => {
-      //     if (event === "signIn") {
-      //       navigation.dispatch(
-      //           CommonActions.reset({
-      //             index: 0,
-      //             routes: [
-      //               { name: 'Root' },
-      //             ],
-      //           })
-      //         );
-      //     }
-      //   });
-      // }, [])
+      useEffect(() => {
+        Hub.listen("auth", ({ payload: { event, data } }) => {
+          if (event === "signIn") {
+            navigation.dispatch(
+                CommonActions.reset({
+                  index: 0,
+                  routes: [
+                    { name: 'Root' },
+                  ],
+                })
+              );
+          }
+        });
+      }, [])
     
   const signInGoogle = async () => {
     navigation.navigate('Root');
-    // await Auth.federatedSignIn({ provider: CognitoHostedUIIdentityProvider.Google});
+    await Auth.federatedSignIn({ provider: "Google"});
   }
 
      return (
