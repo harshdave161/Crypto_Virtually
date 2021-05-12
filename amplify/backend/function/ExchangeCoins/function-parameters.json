@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "api": {
+      "cryptovirtually": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

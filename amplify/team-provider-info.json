@@ -16,6 +16,10 @@
         "cryptovirtually57d7c80257d7c802PostConfirmation": {
           "deploymentBucketName": "amplify-cryptovirtually-dev-194050-deployment",
           "s3Key": "amplify-builds/cryptovirtually57d7c80257d7c802PostConfirmation-433370696c4131626931-build.zip"
+        },
+        "ExchangeCoins": {
+          "deploymentBucketName": "amplify-cryptovirtually-dev-194050-deployment",
+          "s3Key": "amplify-builds/ExchangeCoins-4e7956783159486d3848-build.zip"
         }
       },
       "auth": {
